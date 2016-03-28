@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: DiscoveryServer
+
+  profiles:
+    active: dev    
+
+  cloud:
+    config:
+      env: default # optional
+      label: master # optional
+      uri: http://localhost:80/configserver # remote configuration server uri
+      failFast: true # true = cause the server to fail if remote configuration init fails
+
+  jmx:
+    default-domain: ${spring.application.name}
